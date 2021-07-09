@@ -1,0 +1,33 @@
+first of all we define the position of line and circle.
+We render it but it is not changing its position in every loop.
+
+In a pendulum we need to determine the continuous change in angle
+with respect to the origin.
+Origin is the fixed point in the screen.
+In the program origin is regarded as 400(width/2).
+It is recommended to use the line function because rectangle will 
+move the entire rectanlge in a pendulum way.That means the upper part 
+must be fixed to the origin.
+
+Create a float angle.
+the angle must increment in each loop
+before that we create x,y coordinate for the line and circle
+and change the positon based on x,y coordinate we get.
+
+To determine the x,y we need a little bit of science and mathematics.
+
+If you move the line in certain angle then you will see a right angle
+triangle and now from pythagoras theorem.
+x=length of the line * sin(angle)
+y=length of the line * cos(angle)
+
+now we just need to change the coordinates.
+But we find that it moves in circle.
+
+Because we have not included the force which acts backward in pendulum.
+I have not included the physics over here but the equation we
+need to add is 
+accelearation = -some constant value * sin(angle)
+and we just need to increment velocity,acceleration as program.
+So multiplying velocity with 0.99999 just causes it to decrease 
+its velocity with time.
